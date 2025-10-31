@@ -6,13 +6,13 @@
 
 echo "Setting up Backup and Monitoring System..."
 
-# Check if running as root
+# ======================== Check if running as root
 if [[ $EUID -eq 0 ]]; then
    echo "Error: This script should not be run as root" 
    exit 1
 fi
 
-# Create necessary directories
+# ======================== Create necessary directories
 echo "Creating directories..."
 sudo mkdir -p /etc
 sudo mkdir -p /var/log
@@ -20,7 +20,7 @@ sudo mkdir -p /home/pi/backups
 
 # ============================================== Copy main script
 echo "Installing main script..."
-sudo cp system_backup_monitor.sh /usr/local/bin/
+sudo cp sys_bm.sh /usr/local/bin/
 sudo chmod +x /usr/local/bin/sys_bm.sh
 
 # ============================================== Copy configuration file
